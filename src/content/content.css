@@ -1,0 +1,102 @@
+#web-lamp-sidebar {
+  all: initial;
+  position: fixed;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 14px;
+  background: transparent;
+  box-shadow: none;
+  z-index: 2147483647;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+}
+
+#web-lamp-sidebar::before,
+#web-lamp-sidebar::after {
+  content: none !important;
+  display: none !important;
+  border: none !important;
+}
+
+.web-lamp-button {
+  all: unset;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 11px;
+  font-size: 18px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+  background: rgba(224, 229, 236, 0.92);
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  box-sizing: border-box;
+  cursor: pointer;
+  cursor: grab;
+  touch-action: none;
+}
+
+.web-lamp-button.web-lamp-dragging {
+  cursor: grabbing;
+}
+
+.web-lamp-emoji {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  line-height: 1;
+}
+
+.web-lamp-button:hover {
+  background: rgba(230, 234, 240, 0.98);
+}
+
+#web-lamp-button-light[data-mode="light"] {
+  box-shadow: 0 0 0 1px rgba(255, 223, 128, 0.45), 0 0 10px rgba(255, 223, 128, 0.65);
+  filter: saturate(1.08);
+  opacity: 1;
+}
+
+#web-lamp-button-light[data-mode="dark"] {
+  box-shadow: none;
+  filter: grayscale(0.75) saturate(0.55);
+  opacity: 0.62;
+  background: rgba(214, 220, 230, 0.78);
+}
+
+.web-lamp-close-badge {
+  all: unset;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #c7ccd5;
+  background: rgba(246, 248, 251, 1);
+  color: #c7ccd5;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.web-lamp-close-badge:hover,
+.web-lamp-close-badge:active {
+  border-color: #c7ccd5;
+  color: #c7ccd5;
+  background: rgba(246, 248, 251, 0.96);
+}
