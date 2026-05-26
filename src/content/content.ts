@@ -13,7 +13,7 @@ function handleAsyncError(error: unknown): void {
   if (message.includes("Extension context invalidated")) {
     return;
   }
-  // Keep unexpected errors visible in console for debugging.
+  // Keep unexpected errors visible in console for local debugging.
   console.error(error);
 }
 
@@ -38,7 +38,6 @@ async function toggleLampMode(): Promise<void> {
 }
 
 function closeSidebarOnly(): void {
-  // 关闭侧栏时同步关闭全局自动显示，其他页面会通过 storage 事件同时收起侧栏。
   sidebarAutoShow = false;
   removeSidebar();
   void setSidebarAutoShow(false).catch(handleAsyncError);
